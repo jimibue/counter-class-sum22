@@ -15,6 +15,21 @@ class App extends React.Component {
       { id: 3, name: "Sally", phone: "23445645" },
     ],
   };
+
+  addContact = (contactInfo)=>{
+    let newContact = {...contactInfo, id:Math.random()}
+    let newContacts = [newContact, ...this.state.contacts]
+    this.setState({
+      contacts: newContacts
+    })
+  }
+
+  deleteContact = (id)=>{
+    let newContacts = this.state.contacts.filter(c=> c.id !== id)
+    this.setState({
+      contacts: newContacts
+    })
+  }
   render() {
     const {show} = this.state
     return (
@@ -28,8 +43,8 @@ class App extends React.Component {
         </Button>
         <div>
           <Header as="h1">Contacts DEMO</Header>
-          <ContactForm />
-          <Contacts contacts={this.state.contacts}/>
+          <ContactForm addContact={this.addContact}/>
+          <Contacts contacts={this.state.contacts} deleteContact={this.deleteContact}/>
         </div>
       </Container>
     );

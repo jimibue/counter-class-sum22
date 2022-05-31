@@ -8,7 +8,12 @@ class Contact extends React.Component {
         <Table.Cell>{this.props.name}</Table.Cell>
         <Table.Cell>{this.props.phone}</Table.Cell>
         <Table.Cell>
-          <Button color="red">Delete</Button>
+          <Button
+            color="red"
+            onClick={() => this.props.deleteContact(this.props.id)}
+          >
+            Delete
+          </Button>
           <Button color="blue">Update</Button>
         </Table.Cell>
       </Table.Row>

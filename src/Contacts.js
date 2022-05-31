@@ -3,11 +3,12 @@ import { Table } from "semantic-ui-react";
 import Contact from "./Contact";
 
 class Contacts extends React.Component {
-
   // 2. figure out how to hook it up to react(state/dynamic)
-  renderContacts=()=>{
-      return this.props.contacts.map(c=> <Contact key={c.id} {...c} />)
-  }
+  renderContacts = () => {
+    return this.props.contacts.map((c) => (
+      <Contact deleteContact={this.props.deleteContact} key={c.id} {...c} />
+    ));
+  };
   render() {
     // 1. first figure out the UI with dummy data.. (no state, static) DONE...
     return (
@@ -20,9 +21,7 @@ class Contacts extends React.Component {
           </Table.Row>
         </Table.Header>
 
-        <Table.Body>
-            {this.renderContacts()}
-        </Table.Body>
+        <Table.Body>{this.renderContacts()}</Table.Body>
       </Table>
     );
   }

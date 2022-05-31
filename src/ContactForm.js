@@ -10,6 +10,12 @@ class ContactForm extends React.Component {
     // e.preventDefault(); semantic Form handles this for us
     console.log("submitted");
     console.log('this.state: ', this.state)
+    // add contact to contacts state
+    this.props.addContact(this.state)
+    this.setState({
+        name: "",
+        phone: "", 
+    })
   };
   handleChange = (e) => {
     this.setState({
