@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import ContactForm from './ContactForm';
+import Contacts from './Contacts';
 import CounterClass from './CounterClass';
 import CounterFunc from './CounterFunc';
 
@@ -12,6 +14,11 @@ function App() {
       {show && <CounterClass title='counter 1'/>}
       {show && <CounterClass title='counter 2'/>}
       <button onClick={()=> setShow(!show)}>toggle counter Example</button>
+      <div>
+        <h1>Contacts DEMO</h1>
+        <ContactForm />
+        <Contacts />
+      </div>
     </div>
   );
 }
