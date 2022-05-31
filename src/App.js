@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import CounterClass from './CounterClass';
+import CounterFunc from './CounterFunc';
 
 function App() {
+  const [show, setShow] = useState(false)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {show && <CounterFunc title='counter 1'/>}
+      {show && <CounterFunc title='counter 2'/>}
+      {show && <CounterClass title='counter 1'/>}
+      {show && <CounterClass title='counter 2'/>}
+      <button onClick={()=> setShow(!show)}>toggle counter Example</button>
     </div>
   );
 }
