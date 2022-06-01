@@ -6,7 +6,7 @@ class Contacts extends React.Component {
   // 2. figure out how to hook it up to react(state/dynamic)
   renderContacts = () => {
     return this.props.contacts.map((c) => (
-      <Contact deleteContact={this.props.deleteContact} key={c.id} {...c} />
+      <Contact updateContact={this.props.updateContact} deleteContact={this.props.deleteContact} key={c.id} {...c} />
     ));
   };
   render() {

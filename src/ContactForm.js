@@ -17,9 +17,11 @@ class ContactForm extends React.Component {
         phone: "", 
     })
   };
-  handleChange = (e) => {
+  handleChange = (e, {name,value}) => {
     this.setState({
-        [e.target.name]: e.target.value
+        // if we weren't useing Semantic
+        // [e.target.name]: e.target.value
+        [name]: value
     })
     // if (e.target.name === "phone") {
     //   this.setState({
